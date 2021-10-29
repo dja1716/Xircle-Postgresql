@@ -1,4 +1,4 @@
-update reservations r set is_canceled = true
+update reservations r set is_canceled = true, cancel_reason = '단순변심', detail_reason = '취소되었습니다'
 where r.user_id = (select u.id 
 				from users u, user_profiles up
 				where u.id = up.fk_user_id
